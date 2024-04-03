@@ -18,8 +18,8 @@ def timeit(func):
         return result
     return timeit_wrapper
 
-# model_name="Qwen/Qwen1.5-4B-Chat-GPTQ-Int4"
-model_name="Qwen/Qwen1.5-0.5B-Chat"
+model_name="Qwen/Qwen1.5-4B-Chat-GPTQ-Int4"
+# model_name="Qwen/Qwen1.5-0.5B-Chat" # for cpu debug
 device='cuda' if torch.cuda.is_available() else 'cpu'
 
 @timeit
