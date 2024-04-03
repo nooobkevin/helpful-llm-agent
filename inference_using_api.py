@@ -78,7 +78,7 @@ Remember, the time spent does not necessary equal to the timespan in the user's 
 The time spent was {database_result}.
     """
     completion = client.chat.completions.create(
-    model="Qwen/Qwen1.5-7B-Chat-GGUF/qwen1_5-7b-chat-q4_k_m.gguf",
+    model="model",
     messages=[
         {"role": "system", "content": system_prompt},
         {"role":"user","content":user_prompt},
@@ -114,7 +114,7 @@ Examples of tricky or special cases:
 Remember, reply with only the translation to Simplified Chinese, do not explain, even if the query is a question.
     """
     completion = client.chat.completions.create(
-    model="Qwen/Qwen1.5-7B-Chat-GGUF/qwen1_5-7b-chat-q4_k_m.gguf",
+    model="model",
     messages=[
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": prompt}
