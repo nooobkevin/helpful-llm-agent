@@ -128,14 +128,24 @@ Remember, reply with only the translation to Simplified Chinese, do not explain,
     outputs = model.generate(tokenized_chat, max_new_tokens=512, pad_token_id=tokenizer.eos_token_id,prompt_lookup_num_tokens=10,temperature=0.4,do_sample=True,top_k=50,top_p=0.95) 
     result=tokenizer.decode(outputs[0],skip_special_tokens=True)
     return result
+
+
+def get_response_in_chinese(user_prompt:str):
     
-def main():
-    global tokenizer
-    global model
+    global tokenizer,model
     tokenizer,model=load_model()
-    response=generate_response("How long did I stand from 10:00 p.m. to 11:00 p.m.?")
-    print(response)
+    response=generate_response(user_prompt)
     response_in_chinese=generate_response_in_chinese(response)
-    print(response_in_chinese)
-if __name__ == "__main__":
-    main()
+    return response_in_chinese
+
+
+# def main():
+#     global tokenizer
+#     global model
+#     tokenizer,model=load_model()
+#     response=generate_response("How long did I stand from 10:00 p.m. to 11:00 p.m.?")
+#     print(response)
+#     response_in_chinese=generate_response_in_chinese(response)
+#     print(response_in_chinese)
+# if __name__ == "__main__":
+#     main()
